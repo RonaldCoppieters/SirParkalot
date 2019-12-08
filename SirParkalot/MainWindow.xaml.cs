@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using SirParkalot.Annotations;
+using SirParkalot.pages;
 
 namespace SirParkalot
 {
@@ -25,9 +26,7 @@ namespace SirParkalot
     public partial class MainWindow : Window
     {
 
-        private UIElement[] _startScreen;
-
-        private SettingsModel SettingsModel { get; set; }
+        private SettingsModel SettingsModel { get; }
 
         public MainWindow()
         {
@@ -38,45 +37,14 @@ namespace SirParkalot
             DataContext = SettingsModel;
         }
 
-        private void FindSpotBorder_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
-        {
-            MainPanel.Children.Clear();
-
-            Uri uri = new Uri(@"C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking_5_3x.wmv");
-            var video = new MediaElement()
-            {
-                Source = uri,
-                LoadedBehavior = MediaState.Play
-            };
-
-            MainPanel.Children.Add(video);
-        }
-
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            _startScreen = new UIElement[MainPanel.Children.Count];
-            MainPanel.Children.CopyTo(_startScreen, 0);
+            Window.Content = new MainPage(Window);
         }
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.Key != Key.R) return;
-
-            MainPanel.Children.Clear();
-
-            foreach (var child in _startScreen)
-            {
-                MainPanel.Children.Add(child);
-            }
-
-            MainPanel.Visibility = Visibility.Visible;
-            SettingsPanel.Visibility = Visibility.Hidden;
-        }
-
-        private void SettingsBorder_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-            MainPanel.Visibility = Visibility.Hidden;
-            SettingsPanel.Visibility = Visibility.Visible;
+            Window.Content = new MainPage(Window);
         }
 
     }
