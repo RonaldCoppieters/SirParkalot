@@ -1,0 +1,10 @@
+﻿<Application x:Class="SirParkalot.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:SirParkalot"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <local:ValueToCurrencyConverter x:Key="ValueToCurrencyConverter" />
+        <local:ValueToDistanceConverter x:Key="ValueToDistanceConverter" />
+    </Application.Resources>
+</Application>
