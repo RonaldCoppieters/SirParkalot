@@ -29,9 +29,32 @@
                     </Image>
                 </Canvas>
             </Grid>
-            <TextBlock Text="Sir Parkalot" HorizontalAlignment="Center" Foreground="White" FontSize="30" FontWeight="Bold" FontFamily="Sitka Text" Margin="0 0 0 30"/>
+            <TextBlock x:Name="TitleBlock" Text="Sir Parkalot" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" FontFamily="Sitka Text" Margin="0 0 0 30">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                        <GradientStop x:Name="gStop1" Color="White"></GradientStop>
+                        <GradientStop x:Name="gStop2" Color="White" Offset="0"></GradientStop>
+                        <GradientStop x:Name="gStop3" Color="Silver" Offset="0"></GradientStop>
+                        <GradientStop x:Name="gStop4" Color="White" Offset="0"></GradientStop>
+                        <GradientStop x:Name="gStop5" Color="White" Offset="1.2"></GradientStop>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+                <TextBlock.Triggers>
+                    <EventTrigger SourceName="TitleBlock" RoutedEvent="TextBlock.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard RepeatBehavior="Forever">
+                                <DoubleAnimation Storyboard.TargetName="gStop2" Storyboard.TargetProperty="Offset" From="1.0" To="-.4" Duration="0:0:.6" />
+                                <DoubleAnimation Storyboard.TargetName="gStop3" Storyboard.TargetProperty="Offset" From="1.2" To="-.2" Duration="0:0:.6" />
+                                <DoubleAnimation Storyboard.TargetName="gStop4" Storyboard.TargetProperty="Offset" From="1.4" To="0" Duration="0:0:.6" />
+                                <DoubleAnimation Storyboard.TargetName="gStop5" Storyboard.TargetProperty="Offset" From="1.19" To="1.2" Duration="0:0:6" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </TextBlock.Triggers>
+            </TextBlock>
             <Grid>
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="80"></RowDefinition>
                     <RowDefinition Height="80"></RowDefinition>
                 </Grid.RowDefinitions>
@@ -55,6 +78,7 @@
                         </EventTrigger>
                     </Border.Triggers>
                 </Border>
+
                 <Border Width="200" Height="40" BorderThickness="1" CornerRadius="8" BorderBrush="White" x:Name="SettingsBorder" Grid.Row="1" MouseUp="SettingsBorder_MouseUp" >
                     <Border.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -62,7 +86,27 @@
                             <GradientStop Color="#FF030202" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
-                    <TextBlock x:Name="SettingsTextBlock" Text="Settings" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
+                    <TextBlock x:Name="SettingsTextBlock" Text="Need a spot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
+                    <Border.Triggers>
+                        <EventTrigger RoutedEvent="Border.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsTextBlock" Storyboard.TargetProperty="FontSize" From="18" To="20" Duration=" 0:0:0.15" />
+                                    <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Width" From="200" To="220" Duration=" 0:0:0.15" />
+                                    <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Height" From="40" To="43" Duration=" 0:0:0.15" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Border.Triggers>
+                </Border>
+                <Border Width="200" Height="40" BorderThickness="1" CornerRadius="8" BorderBrush="White" x:Name="HaveSpotBorder" Grid.Row="2" MouseUp="SettingsBorder_MouseUp" >
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF69787A"/>
+                            <GradientStop Color="#FF030202" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock x:Name="HaveSpotTextBlock" Text="Have a spot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
                     <Border.Triggers>
                         <EventTrigger RoutedEvent="Border.MouseEnter">
                             <BeginStoryboard>
