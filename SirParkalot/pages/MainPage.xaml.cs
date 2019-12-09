@@ -27,8 +27,18 @@ namespace SirParkalot.pages
         }
 
         private void SettingsBorder_MouseUp(object sender, MouseButtonEventArgs e)
-        {
+        { 
             Window.Content = new SettingsPage(Window);
+        }
+
+        private void NeedSpotButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Window.Content = new NeedSpotPage(Window);
+        }
+
+        private void HaveSpotButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Window.Content = new RegisterPage(Window);
         }
     }
 }

@@ -57,67 +57,34 @@
                 <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="80"></RowDefinition>
             </Grid.RowDefinitions>
-            <Border Width="200" Height="40" BorderThickness="1" CornerRadius="8" BorderBrush="White" x:Name="FindSpotBorder">
-                <Border.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF00535F"/>
-                        <GradientStop Color="#FF11A34D" Offset="1"/>
-                    </LinearGradientBrush>
-                </Border.Background>
-                <TextBlock x:Name="FindSpotTextBlock" Text="Find me a spot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
-                <Border.Triggers>
-                    <EventTrigger RoutedEvent="Border.MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="FindSpotTextBlock" Storyboard.TargetProperty="FontSize" From="18" To="20" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="FindSpotBorder" Storyboard.TargetProperty="Width" From="200" To="220" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="FindSpotBorder" Storyboard.TargetProperty="Height" From="40" To="43" Duration=" 0:0:0.15" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Border.Triggers>
-            </Border>
 
-            <Border Width="200" Height="40" BorderThickness="1" CornerRadius="8" BorderBrush="White" x:Name="SettingsBorder" Grid.Row="1" MouseUp="SettingsBorder_MouseUp" >
-                <Border.Background>
+            <Button x:Name="NeedSpotButton" Content="I need a spot" Click="NeedSpotButton_OnClick">
+                <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF69787A"/>
-                        <GradientStop Color="#FF030202" Offset="1"/>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF56F636" Offset="1"/>
                     </LinearGradientBrush>
-                </Border.Background>
-                <TextBlock x:Name="SettingsTextBlock" Text="Need a spot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
-                <Border.Triggers>
-                    <EventTrigger RoutedEvent="Border.MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsTextBlock" Storyboard.TargetProperty="FontSize" From="18" To="20" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Width" From="200" To="220" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Height" From="40" To="43" Duration=" 0:0:0.15" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Border.Triggers>
-            </Border>
-            <Border Width="200" Height="40" BorderThickness="1" CornerRadius="8" BorderBrush="White" x:Name="HaveSpotBorder" Grid.Row="2" MouseUp="SettingsBorder_MouseUp" >
-                <Border.Background>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="HaveSpotButton" Grid.Row="1" Content="I have a spot" Click="HaveSpotButton_OnClick" >
+                <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FF69787A"/>
-                        <GradientStop Color="#FF030202" Offset="1"/>
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFF336" Offset="1"/>
                     </LinearGradientBrush>
-                </Border.Background>
-                <TextBlock x:Name="HaveSpotTextBlock" Text="Have a spot" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontFamily="Sitka Text"></TextBlock>
-                <Border.Triggers>
-                    <EventTrigger RoutedEvent="Border.MouseEnter">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsTextBlock" Storyboard.TargetProperty="FontSize" From="18" To="20" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Width" From="200" To="220" Duration=" 0:0:0.15" />
-                                <DoubleAnimation AutoReverse="True" Storyboard.TargetName="SettingsBorder" Storyboard.TargetProperty="Height" From="40" To="43" Duration=" 0:0:0.15" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </Border.Triggers>
-            </Border>
+                </Button.Background>
+            </Button>
+
+            <Button Grid.Row="2" Content="Profile">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFA2A2A2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
         </Grid>
     </StackPanel>
 </Page>

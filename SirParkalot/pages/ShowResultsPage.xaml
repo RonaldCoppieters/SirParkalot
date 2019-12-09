@@ -1,0 +1,73 @@
+﻿<Page x:Class="SirParkalot.pages.ShowResultsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SirParkalot.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1015"
+      Title="ShowResultsPage"
+      Background="#1E1E1E">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Canvas Width="150" Height="200" HorizontalAlignment="Center">
+                <Image x:Name="ParkalotImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\SirParkalot_Sprite.png" Width="150" Canvas.Top="20" />
+                <Image x:Name="ShieldImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\ParkalotShield.png" Width="60" Canvas.Top="110">
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="ShieldImage" Storyboard.TargetProperty="Width" From="60" To="70" Duration="0:0:1" AutoReverse="True" RepeatBehavior="Forever" />
+                                    <DoubleAnimation Storyboard.TargetName="ParkalotImage" Storyboard.TargetProperty="(Canvas.Top)" To="30" Duration="0:0:1" AutoReverse="True" RepeatBehavior="Forever">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+            </Canvas>
+            <StackPanel Orientation="Horizontal">
+                <Polygon Width="50" Height="100" Stroke="White" Fill="White" Points="0,80 50,50 50,80" />
+                <Border Background="White" Margin="0 20 20 20" CornerRadius="8">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Foreground="Black" Padding="10" FontWeight="Bold">Here's what i found!</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10" FontWeight="Bold">These are all free.</TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <DockPanel Margin="0 0 0 10">
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Hasselt Zwembad (180m - 3 spots)</TextBlock>
+                <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
+                    <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking_NoTag.jpg" HorizontalAlignment="Center"></Image>
+                </Border>
+            </DockPanel>
+            <DockPanel Grid.Row="1" Grid.Column="0" Margin="0 0 0 10">
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">IJsbaan sport (700m - 112 spots)</TextBlock>
+                <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
+                    <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking3.jpg" HorizontalAlignment="Center"></Image>
+                </Border>
+            </DockPanel>
+            <DockPanel Grid.Row="0" Grid.Column="1" Margin="0 0 0 10">
+                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Vlinderstraat (600m - 21 spots)</TextBlock>
+                <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
+                    <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking2.jpg" HorizontalAlignment="Center"></Image>
+                </Border>
+            </DockPanel>
+        </Grid>
+    </Grid>
+</Page>

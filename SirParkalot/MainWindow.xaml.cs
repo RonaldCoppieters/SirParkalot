@@ -44,6 +44,8 @@ namespace SirParkalot
 
         private void Window_KeyUp(object sender, KeyEventArgs e)
         {
+            if (e.Key != Key.R) return;
+
             Window.Content = new MainPage(Window);
         }
 
