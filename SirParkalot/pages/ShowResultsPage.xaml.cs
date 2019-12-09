@@ -25,5 +25,10 @@ namespace SirParkalot.pages
 
             Window = window;
         }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Window.Content = new NeedSpotPage(Window);
+        }
     }
 }

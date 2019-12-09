@@ -36,5 +36,10 @@ namespace SirParkalot.pages
         {
             Window.Content = new ShowResultsPage(Window);
         }
+
+        private void BackButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            Window.Content = new MainPage(Window);
+        }
     }
 }

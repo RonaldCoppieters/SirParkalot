@@ -15,6 +15,14 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="0 0 60 0" Content="Back" x:Name="BackButton" Click="BackButton_OnClick">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
             <Canvas Width="150" Height="200" HorizontalAlignment="Center">
                 <Image x:Name="ParkalotImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\SirParkalot_Sprite.png" Width="150" Canvas.Top="20" />
                 <Image x:Name="ShieldImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\ParkalotShield.png" Width="60" Canvas.Top="110">

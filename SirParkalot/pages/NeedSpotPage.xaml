@@ -12,11 +12,19 @@
     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <DockPanel DockPanel.Dock="Left">
             <StackPanel DockPanel.Dock="Left" Margin="40">
+                <Button x:Name="BackButton" Margin="0 0 0 40" Content="Back" Click="BackButton_OnClick">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="Red" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
                 <Button x:Name="SettingsButton" Content="Settings" Margin="0 0 0 40" Click="SettingsButton_OnClick">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
-                            <GradientStop Color="#FFF41717" Offset="1"/>
+                            <GradientStop Color="#FF857575" Offset="1"/>
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>

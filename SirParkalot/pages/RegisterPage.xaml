@@ -10,14 +10,24 @@
       Background="#1E1E1E">
 
     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-        <Button Content="Revenue Statistics" DockPanel.Dock="Bottom" HorizontalAlignment="Left" Margin="20">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="#FF00ABA8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+        <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Button Content="Back" x:Name="BackButton" Click="BackButton_OnClick">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Revenue Statistics" HorizontalAlignment="Left" Margin="20">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FF00ABA8" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
         <StackPanel>
             <DockPanel Margin="20">
                 <Button Content="Register new">
@@ -80,6 +90,59 @@
                             <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
                             <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
                             <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                <Border Background="LightGray" Margin="20" CornerRadius="8" BorderThickness="4" BorderBrush="White">
+                    <StackPanel>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0">Langegrachtstraat 1</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Background="DarkGray">3840 Hoepertingen</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0">België, Limburg</TextBlock>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*" />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Border Grid.ColumnSpan="8" Background="DarkGray"></Border>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Available</TextBlock>
+                            <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="1" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Mon</TextBlock>
+                            </Border>
+                            <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="2" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Tue</TextBlock>
+                            </Border>
+                            <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="3" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Wed</TextBlock>
+                            </Border>
+                            <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="4" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Thu</TextBlock>
+                            </Border>
+                            <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="5" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Fri</TextBlock>
+                            </Border>
+                            <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="6" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sat</TextBlock>
+                            </Border>
+                            <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="7" Grid.Row="0">
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sun</TextBlock>
+                            </Border>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="0" Grid.Row="1">Time</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">10am-6pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">11am-7pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">2m-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Center">2pm-4pm</TextBlock>
                         </Grid>
                     </StackPanel>
                 </Border>

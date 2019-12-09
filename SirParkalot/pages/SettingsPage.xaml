@@ -43,5 +43,13 @@
                 <RadioButton Foreground="White" Margin="0 0 20 0">Maybe</RadioButton>
                 <RadioButton Foreground="White">No</RadioButton>
             </StackPanel>
+            <Button HorizontalAlignment="Left" Margin="0 20 0 0" Content="Back" x:Name="BackButton" Click="BackButton_OnClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
         </StackPanel>
 </Page>
