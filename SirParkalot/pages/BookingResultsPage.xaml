@@ -1,0 +1,90 @@
+﻿<Page x:Class="SirParkalot.pages.BookingResultsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SirParkalot.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1015"
+      Title="BookingResultsPage"
+      Background="#1E1E1E">
+    <Page.Resources>
+        <Style TargetType="{x:Type Border}" x:Key="LocationButton">
+            <Setter x:Name="LocationBackground" Property="Background" Value="LightSkyBlue" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="20 0 40 20" />
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Canvas Width="150" Height="200" HorizontalAlignment="Center">
+                <Image x:Name="ParkalotImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\SirParkalot_Sprite.png" Width="150" Canvas.Top="20" />
+                <Image x:Name="ShieldImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\ParkalotShield.png" Width="60" Canvas.Top="110">
+                    <Image.Triggers>
+                        <EventTrigger RoutedEvent="Window.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="ShieldImage" Storyboard.TargetProperty="Width" From="60" To="70" Duration="0:0:1" AutoReverse="True" RepeatBehavior="Forever" />
+                                    <DoubleAnimation Storyboard.TargetName="ParkalotImage" Storyboard.TargetProperty="(Canvas.Top)" To="30" Duration="0:0:1" AutoReverse="True" RepeatBehavior="Forever">
+                                    </DoubleAnimation>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Image.Triggers>
+                </Image>
+            </Canvas>
+            <StackPanel Orientation="Horizontal">
+                <Polygon Width="50" Height="100" Stroke="White" Fill="White" Points="0,50 50,60 50,40" />
+                <Border Background="White" Margin="0 20 20 20" CornerRadius="8" VerticalAlignment="Center">
+                    <StackPanel VerticalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10" FontWeight="Bold">Here's what i found!</TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel x:Name="ResultGrid" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0 0 0 80">
+            <StackPanel Orientation="Horizontal">
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}"  Foreground="DarkBlue">Zeilstraat 1</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3500 Hasselt</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Distance: 350m</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Price: €0,43/h</TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}"  Foreground="DarkBlue">Vlinderstraat 5</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3500 Hasselt</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Distance: 400m</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Price: 0.39/h</TextBlock>
+                    </StackPanel>
+                </Border>
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}"  Foreground="DarkBlue">Wijngaardstraat 8</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3500 Hasselt</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Distance: 840m</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Price: 0.20/h</TextBlock>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </StackPanel>
+        <Button Grid.Row="2" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="40" Click="BackButton_OnClick">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Page>

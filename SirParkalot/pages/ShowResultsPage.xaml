@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1015"
       Title="ShowResultsPage"
-      Background="#1E1E1E">
+      Background="#1E1E1E"
+      Loaded="ShowResultsPage_OnLoaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,14 +16,6 @@
             <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Margin="0 0 60 0" Content="Back" x:Name="BackButton" Click="BackButton_OnClick">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="Black"/>
-                        <GradientStop Color="Red" Offset="1"/>
-                    </LinearGradientBrush>
-                </Button.Background>
-            </Button>
             <Canvas Width="150" Height="200" HorizontalAlignment="Center">
                 <Image x:Name="ParkalotImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\SirParkalot_Sprite.png" Width="150" Canvas.Top="20" />
                 <Image x:Name="ShieldImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\ParkalotShield.png" Width="60" Canvas.Top="110">
@@ -41,15 +34,15 @@
             </Canvas>
             <StackPanel Orientation="Horizontal">
                 <Polygon Width="50" Height="100" Stroke="White" Fill="White" Points="0,80 50,50 50,80" />
-                <Border Background="White" Margin="0 20 20 20" CornerRadius="8">
+                <Border Background="White" Margin="0 20 20 20" CornerRadius="8" VerticalAlignment="Center">
                     <StackPanel VerticalAlignment="Center">
-                        <TextBlock Foreground="Black" Padding="10" FontWeight="Bold">Here's what i found!</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10" FontWeight="Bold">These are all free.</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10" FontWeight="Bold">Here's what i found!</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10" FontWeight="Bold">These are all free public spaces.</TextBlock>
                     </StackPanel>
                 </Border>
             </StackPanel>
         </StackPanel>
-        <Grid Grid.Row="1">
+        <Grid x:Name="ResultGrid" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition />
                 <RowDefinition />
@@ -59,23 +52,31 @@
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <DockPanel Margin="0 0 0 10">
-                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Hasselt Zwembad (180m - 3 spots)</TextBlock>
+                <TextBlock Style="{StaticResource WhiteText}" DockPanel.Dock="Top" HorizontalAlignment="Center">Hasselt Zwembad (180m - 3 spots)</TextBlock>
                 <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
                     <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking_NoTag.jpg" HorizontalAlignment="Center"></Image>
                 </Border>
             </DockPanel>
             <DockPanel Grid.Row="1" Grid.Column="0" Margin="0 0 0 10">
-                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">IJsbaan sport (700m - 112 spots)</TextBlock>
+                <TextBlock Style="{StaticResource WhiteText}" DockPanel.Dock="Top" HorizontalAlignment="Center">IJsbaan sport (700m - 112 spots)</TextBlock>
                 <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
                     <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking3.jpg" HorizontalAlignment="Center"></Image>
                 </Border>
             </DockPanel>
             <DockPanel Grid.Row="0" Grid.Column="1" Margin="0 0 0 10">
-                <TextBlock DockPanel.Dock="Top" HorizontalAlignment="Center">Vlinderstraat (600m - 21 spots)</TextBlock>
+                <TextBlock Style="{StaticResource WhiteText}" DockPanel.Dock="Top" HorizontalAlignment="Center">Vlinderstraat (600m - 21 spots)</TextBlock>
                 <Border BorderBrush="Goldenrod" BorderThickness="5" CornerRadius="8" HorizontalAlignment="Center">
                     <Image Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\PXL_Parking2.jpg" HorizontalAlignment="Center"></Image>
                 </Border>
             </DockPanel>
+            <Button Margin="40" Content="Back" x:Name="BackButton" Click="BackButton_OnClick" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
         </Grid>
     </Grid>
 </Page>

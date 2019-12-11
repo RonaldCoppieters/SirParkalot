@@ -38,14 +38,14 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <TextBlock Text="Balance € 6,24" Foreground="White" DockPanel.Dock="Right" HorizontalAlignment="Right" FontWeight="Bold" />
+                <TextBlock Text="Balance € 16,24" Foreground="White" DockPanel.Dock="Right" HorizontalAlignment="Right" FontWeight="Bold" Style="{StaticResource WhiteText}" />
             </DockPanel>
             <StackPanel>
-                <Border Background="LightGray" Margin="20" CornerRadius="8" BorderThickness="4" BorderBrush="White">
+                <Border Background="LightSkyBlue" Margin="20" CornerRadius="8" BorderThickness="4" BorderBrush="White">
                     <StackPanel>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0">Kerklaan 15</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0" Background="DarkGray">3590 Diepenbeek</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0">België, Limburg</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Style="{StaticResource WhiteText}">Kerklaan 15</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Background="CornflowerBlue" Style="{StaticResource WhiteText}">3590 Diepenbeek</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Style="{StaticResource WhiteText}">België, Limburg</TextBlock>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="3*" />
@@ -61,43 +61,43 @@
                                 <RowDefinition />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <Border Grid.ColumnSpan="8" Background="DarkGray"></Border>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Available</TextBlock>
+                            <Border Grid.ColumnSpan="8" Background="CornflowerBlue"></Border>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Style="{StaticResource WhiteText}">Available</TextBlock>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="1" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Mon</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Mon</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="2" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Tue</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Tue</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="3" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Wed</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Wed</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="4" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Thu</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Thu</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="5" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Fri</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Fri</TextBlock>
                             </Border>
                             <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="6" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sat</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Sat</TextBlock>
                             </Border>
                             <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="7" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sun</TextBlock>
+                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center" Style="{StaticResource WhiteText}">Sun</TextBlock>
                             </Border>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="0" Grid.Row="1">Time</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="0" Grid.Row="1" Style="{StaticResource WhiteText}">Time</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="1" Grid.Row="1" Style="{StaticResource WhiteText}" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="2" Grid.Row="1" Style="{StaticResource WhiteText}" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" Style="{StaticResource WhiteText}" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" Style="{StaticResource WhiteText}" HorizontalAlignment="Center">8am-4pm</TextBlock>
+                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" Style="{StaticResource WhiteText}" HorizontalAlignment="Center">8am-4pm</TextBlock>
                         </Grid>
                     </StackPanel>
                 </Border>
-                <Border Background="LightGray" Margin="20" CornerRadius="8" BorderThickness="4" BorderBrush="White">
+                <Border Background="LightSkyBlue" Margin="20" CornerRadius="8" BorderThickness="4" BorderBrush="White">
                     <StackPanel>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0">Langegrachtstraat 1</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0" Background="DarkGray">3840 Hoepertingen</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 0">België, Limburg</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Style="{StaticResource WhiteText}">Langegrachtstraat 1</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Style="{StaticResource WhiteText}" Background="CornflowerBlue">3840 Hoepertingen</TextBlock>
+                        <TextBlock Foreground="Black" Padding="10 0 10 0" Style="{StaticResource WhiteText}">België, Limburg</TextBlock>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="2*" />
@@ -113,36 +113,36 @@
                                 <RowDefinition />
                                 <RowDefinition />
                             </Grid.RowDefinitions>
-                            <Border Grid.ColumnSpan="8" Background="DarkGray"></Border>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Available</TextBlock>
+                            <Border Grid.ColumnSpan="8" Background="CornflowerBlue"></Border>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0">Available</TextBlock>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="1" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Mon</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Mon</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="2" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Tue</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Tue</TextBlock>
                             </Border>
                             <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="3" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Wed</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Wed</TextBlock>
                             </Border>
                             <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="4" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Thu</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Thu</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="5" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Fri</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Fri</TextBlock>
                             </Border>
                             <Border Background="GreenYellow" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="6" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sat</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Sat</TextBlock>
                             </Border>
                             <Border Background="OrangeRed" CornerRadius="4" Padding="1" Margin="0 3 5 3" Grid.Column="7" Grid.Row="0">
-                                <TextBlock Foreground="DarkGreen" HorizontalAlignment="Center">Sun</TextBlock>
+                                <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkGreen" HorizontalAlignment="Center">Sun</TextBlock>
                             </Border>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="0" Grid.Row="1">Time</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">10am-6pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">11am-7pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">2m-4pm</TextBlock>
-                            <TextBlock Foreground="Black" Padding="10 0 10 0" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Center">2pm-4pm</TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="0" Grid.Row="1">Time</TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center">10am-6pm</TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center">11am-7pm</TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="3" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center"></TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Center">2m-4pm</TextBlock>
+                            <TextBlock Style="{StaticResource WhiteText}" Foreground="Black" Padding="10 0 10 0" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Center">2pm-4pm</TextBlock>
                         </Grid>
                     </StackPanel>
                 </Border>

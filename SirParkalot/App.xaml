@@ -22,7 +22,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="TextBlock" x:Key="WhiteText">
             <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="20" />
             <Setter Property="FontFamily" Value="Sitka Text" />

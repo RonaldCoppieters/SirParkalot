@@ -8,6 +8,16 @@
       Title="NeedSpotPage"
       d:DesignHeight="600" d:DesignWidth="1015"
       Background="#1E1E1E">
+    <Page.Resources>
+        <Style TargetType="{x:Type Border}" x:Key="LocationButton">
+            <Setter x:Name="LocationBackground" Property="Background" Value="LightSkyBlue" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="5" />
+            <Setter Property="Margin" Value="0 0 0 20" />
+        </Style>
+    </Page.Resources>
 
     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
         <DockPanel DockPanel.Dock="Left">
@@ -20,31 +30,15 @@
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button x:Name="SettingsButton" Content="Settings" Margin="0 0 0 40" Click="SettingsButton_OnClick">
+                <Button x:Name="SettingsButton" Content="Book private spot" Margin="0 0 0 40" Click="SettingsButton_OnClick">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF857575" Offset="1"/>
+                            <GradientStop Color="#FFFFEE00" Offset="1"/>
                         </LinearGradientBrush>
                     </Button.Background>
                 </Button>
-                <Button Content="Add new location" Margin="0 0 0 40">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FF800B68" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button Content="Book private spot" Margin="0 0 0 40">
-                    <Button.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="Black"/>
-                            <GradientStop Color="#FFC3C040" Offset="1"/>
-                        </LinearGradientBrush>
-                    </Button.Background>
-                </Button>
-                <Button x:Name="SpotFinderButton" Content="Find spot near you" Click="SpotFinderButton_OnClick">
+                <Button x:Name="SpotFinderButton" Content="Add new location">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="Black"/>
@@ -53,26 +47,30 @@
                     </Button.Background>
                 </Button>
             </StackPanel>
-            <Border DockPanel.Dock="Right" Margin="40" CornerRadius="8" VerticalAlignment="Top" BorderBrush="DarkBlue" BorderThickness="5">
-                <StackPanel>
-                    <TextBlock Padding="20" Background="DarkBlue">Saved Locations</TextBlock>
-                    <StackPanel Background="SkyBlue">
-                        <TextBlock Foreground="Black" Padding="10 10 10 0">Kloosterstraat 1</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 10">3700 Tongeren, België</TextBlock>
+            <StackPanel Margin="20" x:Name="LocationPanel">
+                <TextBlock HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Style="{StaticResource WhiteText}">Locations</TextBlock>
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave" MouseLeftButtonUp="SpotFinderButton_OnClick">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}"  Foreground="DarkBlue">Elfde-Liniestraat 24</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3500 Hasselt</TextBlock>
                     </StackPanel>
-                    <StackPanel Background="CornflowerBlue">
-                        <TextBlock Foreground="Black" Padding="10 10 10 0">Nieuwe Steenweg 42</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 10">3870 Heers, België</TextBlock>
+                </Border>
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Nieuwe Steenweg 42</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3870 Heers, België</TextBlock>
                     </StackPanel>
-                    <StackPanel Background="SkyBlue">
-                        <TextBlock Foreground="Black" Padding="10 10 10 0">Romestraat 11</TextBlock>
-                        <TextBlock Foreground="Black" Padding="10 0 10 10">8400 Oostende, België</TextBlock>
+                </Border>
+                <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                    <StackPanel HorizontalAlignment="Center">
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Romestraat 11</TextBlock>
+                        <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">8400 Oostende, België</TextBlock>
                     </StackPanel>
-                </StackPanel>
-            </Border>
+                </Border>
+            </StackPanel>
         </DockPanel>
         <StackPanel DockPanel.Dock="Right">
-            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" Margin="20">Balance € 6,24</TextBlock>
+            <TextBlock HorizontalAlignment="Right" FontWeight="Bold" Margin="20" Style="{StaticResource WhiteText}">Balance € 16,24</TextBlock>
         </StackPanel>
     </DockPanel>
 </Page>

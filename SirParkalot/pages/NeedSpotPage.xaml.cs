@@ -36,10 +36,38 @@ namespace SirParkalot.pages
         {
             Window.Content = new ShowResultsPage(Window);
         }
-
+        
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
         {
             Window.Content = new MainPage(Window);
+        }
+
+        private void LocationButton_OnMouseEnter(object sender, MouseEventArgs e)
+        {
+            if (e.Handled) return;
+
+            var source = e.Source;
+
+            if (!(source is Border)) return;
+
+            var border = (Border) source;
+
+            border.Background = new SolidColorBrush(Color.FromRgb(42, 69, 116));
+            e.Handled = true;
+        }
+
+        private void LocationButton_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            if (e.Handled) return;
+
+            var source = e.Source;
+
+            if (!(source is Border)) return;
+
+            var border = (Border)source;
+
+            border.Background = new SolidColorBrush(Color.FromRgb(135, 206, 250));
+            e.Handled = true;
         }
     }
 }

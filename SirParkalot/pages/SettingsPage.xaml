@@ -8,48 +8,107 @@
       d:DesignHeight="600" d:DesignWidth="1015"
       Title="SettingsPage"
       Background="#1E1E1E">
+    <Page.Resources>
+        <Style TargetType="{x:Type Border}" x:Key="LocationButton">
+            <Setter x:Name="LocationBackground" Property="Background" Value="LightSkyBlue" />
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="5" />
+            <Setter Property="CornerRadius" Value="8" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+        <Style TargetType="RadioButton">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Sitka Text" />
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="FontFamily" Value="Sitka Text" />
+        </Style>
+    </Page.Resources>
 
-        <StackPanel HorizontalAlignment="Center" x:Name="SettingsPanel" VerticalAlignment="Center">
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
-                <Image x:Name="CogImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\settings.png" Width="50" RenderTransformOrigin=".5,.5">
-                    <Image.RenderTransform>
-                        <RotateTransform />
-                    </Image.RenderTransform>
-                    <Image.Triggers>
-                        <EventTrigger SourceName="CogImage" RoutedEvent="Image.Loaded">
-                            <BeginStoryboard>
-                                <Storyboard TargetName="CogImage" TargetProperty="RenderTransform.(RotateTransform.Angle)">
-                                    <DoubleAnimation To="359" RepeatBehavior="Forever" Duration="0:0:6" />
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Image.Triggers>
-                </Image>
-                <TextBlock Foreground="White" Text="Settings" FontFamily="Sitka Text" FontSize="40" VerticalAlignment="Center" Margin="20 0 0 0"></TextBlock>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Price/hour" Width="250" Foreground="White" Margin="0 0 10 0" />
-                <Slider Width="200" Minimum="0" Maximum="100" Value="{Binding PricePerHour}" />
-                <TextBlock Text="{Binding PricePerHour, Converter={StaticResource ValueToCurrencyConverter}}" Foreground="White" Width="100" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                <TextBlock Text="Distance from destination" Width="250" Foreground="White" Margin="0 0 10 0" />
-                <Slider Width="200" Minimum="0" Maximum="1000" Value="{Binding DistanceFromLocation}" />
-                <TextBlock Text="{Binding DistanceFromLocation, Converter={StaticResource ValueToDistanceConverter}}" Foreground="White" Width="100" />
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                <TextBlock Text="Disabled Parking" Width="180" Foreground="White" Margin="0 0 10 0" />
-                <RadioButton Foreground="White" Margin="0 0 20 0" IsChecked="True">Yes</RadioButton>
-                <RadioButton Foreground="White" Margin="0 0 20 0">Maybe</RadioButton>
-                <RadioButton Foreground="White">No</RadioButton>
-            </StackPanel>
-            <Button HorizontalAlignment="Left" Margin="0 20 0 0" Content="Back" x:Name="BackButton" Click="BackButton_OnClick">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="Black"/>
-                    <GradientStop Color="Red" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
+    <StackPanel HorizontalAlignment="Center" x:Name="SettingsPanel" VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+            <Image x:Name="CogImage" Source="C:\Users\rcopp\source\repos\SirParkalot\SirParkalot\resources\settings.png" Width="50" RenderTransformOrigin=".5,.5">
+                <Image.RenderTransform>
+                    <RotateTransform />
+                </Image.RenderTransform>
+                <Image.Triggers>
+                    <EventTrigger SourceName="CogImage" RoutedEvent="Image.Loaded">
+                        <BeginStoryboard>
+                            <Storyboard TargetName="CogImage" TargetProperty="RenderTransform.(RotateTransform.Angle)">
+                                <DoubleAnimation To="359" RepeatBehavior="Forever" Duration="0:0:6" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Image.Triggers>
+            </Image>
+            <TextBlock Foreground="White" Text="Book private spot" FontFamily="Sitka Text" FontSize="40" VerticalAlignment="Center" Margin="20 0 0 0"></TextBlock>
         </StackPanel>
+        <StackPanel>
+            <TextBlock Style="{StaticResource WhiteText}" FontWeight="Bold" Margin="0 20 0 20">Balance € 16,24</TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource WhiteText}" Text="Price/hour" Width="250" Foreground="White" Margin="0 0 10 0" />
+            <Slider Width="200" Minimum="0" Maximum="5" Value="{Binding PricePerHour}" />
+            <TextBlock Style="{StaticResource WhiteText}" Text="{Binding PricePerHour, Converter={StaticResource ValueToCurrencyConverter}}" Foreground="White" Width="100" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+            <TextBlock Style="{StaticResource WhiteText}" Text="Distance from destination" Width="250" Foreground="White" Margin="0 0 10 0" />
+            <Slider Width="200" Minimum="0" Maximum="1000" Value="{Binding DistanceFromLocation}" />
+            <TextBlock Style="{StaticResource WhiteText}" Text="{Binding DistanceFromLocation, Converter={StaticResource ValueToDistanceConverter}}" Foreground="White" Width="100" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+            <TextBlock Style="{StaticResource WhiteText}" Text="Disabled Parking" Width="180" Foreground="White" Margin="0 0 10 0" />
+            <RadioButton Foreground="White" Margin="0 0 20 0" IsChecked="True">Yes</RadioButton>
+            <RadioButton Foreground="White" Margin="0 0 20 0">Maybe</RadioButton>
+            <RadioButton Foreground="White">No</RadioButton>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+            <TextBlock Style="{StaticResource WhiteText}" VerticalAlignment="Center" Margin="0 0 120 0">Location</TextBlock>
+            <Border Style="{StaticResource LocationButton}" MouseEnter="LocationButton_OnMouseEnter" MouseLeave="LocationButton_OnMouseLeave">
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">Elfde-Liniestraat 24</TextBlock>
+                    <TextBlock Style="{StaticResource WhiteText}" Foreground="DarkBlue">3500 Hasselt</TextBlock>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+            <TextBlock Style="{StaticResource WhiteText}" VerticalAlignment="Center" Margin="0 0 40 0">Date</TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <Label Target="{Binding ElementName=FromDatePicker}">From</Label>
+                <DatePicker Foreground="Black" x:Name="FromDatePicker" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="8">
+                <Label Target="{Binding ElementName=UntilDatePicker}">Until</Label>
+                <DatePicker x:Name="UntilDatePicker" Foreground="Black" />
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Style="{StaticResource WhiteText}" Margin="0 0 47 0">Time</TextBlock>
+            <TextBlock Style="{StaticResource WhiteText}" Margin="0 0 5 0">From</TextBlock>
+            <TextBox Width="100"></TextBox>
+            <TextBlock Style="{StaticResource WhiteText}" Margin="27 0 5 0">Until</TextBlock>
+            <TextBox Width="100"></TextBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
+            <Button HorizontalAlignment="Left" Content="Back" x:Name="BackButton" Click="BackButton_OnClick" Margin="0 0 20 0">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="Red" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Search" x:Name="SearchButton" Click="SearchButton_OnClick">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFFFF34B" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </StackPanel>
+    </StackPanel>
 </Page>

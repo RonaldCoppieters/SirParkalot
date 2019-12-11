@@ -14,23 +14,23 @@ using System.Windows.Shapes;
 namespace SirParkalot.pages
 {
     /// <summary>
-    /// Interaction logic for SettingsPage.xaml
+    /// Interaction logic for BookingResultsPage.xaml
     /// </summary>
-    public partial class SettingsPage : Page
+    public partial class BookingResultsPage : Page
     {
-
         private MainWindow Window { get;  }
-
-        public SettingsPage(MainWindow window)
+        public BookingResultsPage(MainWindow window)
         {
             InitializeComponent();
+
             Window = window;
         }
 
         private void BackButton_OnClick(object sender, RoutedEventArgs e)
         {
-            Window.Content = new NeedSpotPage(Window);
+            Window.Content = new SettingsPage(Window);
         }
+
         private void LocationButton_OnMouseEnter(object sender, MouseEventArgs e)
         {
             if (e.Handled) return;
@@ -57,11 +57,6 @@ namespace SirParkalot.pages
 
             border.Background = new SolidColorBrush(Color.FromRgb(135, 206, 250));
             e.Handled = true;
-        }
-
-        private void SearchButton_OnClick(object sender, RoutedEventArgs e)
-        {
-            Window.Content = new BookingResultsPage(Window);
         }
     }
 }
